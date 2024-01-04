@@ -1,5 +1,12 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        return true;
+      } 
+    }
+  }
+  return false;
 }
 
 /* 
@@ -7,7 +14,11 @@ function hasTargetSum(array, target) {
 */
 
 /* 
-  Add your pseudocode here
+// 1. designate a starting point, the first number in the array
+// 2. add the first number to the second number in the array
+// 3. if their sum equals the target, return true. If not, add the first number to the next number in the array. 
+// 4. if you've reached the end of the array and there still isnt' a match, change the "starting point" to the second number by incrementing your start. 
+// 5. add the new starting number to the next number in the array. Repeat steps 2-4. 
 */
 
 /*
